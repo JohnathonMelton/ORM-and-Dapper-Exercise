@@ -20,7 +20,7 @@ namespace ORM_Dapper
             #region Department Section
             //var departmentRepo = new DapperDepartmentRepository(conn);
 
-            //departmentRepo.InsertDepartment("Johnathon's New Department"); //Checking if Insert Works. Accidentally did it 3 times. 
+            //departmentRepo.InsertDepartment("Johnathon's New Department"); //INSERT TEST. Accidentally did it 3 times. 
 
             //var  departments = departmentRepo.GetAllDepartments();
 
@@ -36,19 +36,20 @@ namespace ORM_Dapper
 
             var productRepository = new DapperProductRepository(conn);
 
-            var productToUpdate = productRepository.GetProduct(942);
+            //var productToUpdate = productRepository.GetProduct(942); // UPDATE TEST
 
-            productToUpdate.Name = "UPDATED";
-            productToUpdate.Price = 29.99;
-            productToUpdate.CategoryID = 1;
-            productToUpdate.OnSale = false;
-            productToUpdate.StockLevel = 50;
+            //productToUpdate.Name = "UPDATED";
+            //productToUpdate.Price = 29.99;
+            //productToUpdate.CategoryID = 1;
+            //productToUpdate.OnSale = false;
+            //productToUpdate.StockLevel = 50;
 
-            productRepository.UpdateProduct(productToUpdate);
+            //productRepository.UpdateProduct(productToUpdate);
+
+            productRepository.DeleteProduct(942); // DELETE TEST
+
 
             var products = productRepository.GetAllProducts();
-
-
             foreach (var product in products)
             {
                 Console.WriteLine(product.ProductID);
