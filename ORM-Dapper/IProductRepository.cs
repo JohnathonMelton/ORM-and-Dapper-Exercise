@@ -10,6 +10,8 @@ namespace ORM_Dapper
     {
         public IEnumerable<Product> GetAllProducts();
 
-        public void CreateProduct(string name, double price, int categoryID);
+        public Product GetProduct(int id);
+
+        public void UpdateProduct(Product product);
     }
 }
