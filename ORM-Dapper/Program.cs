@@ -16,6 +16,21 @@ namespace ORM_Dapper
             string connString = config.GetConnectionString("DefaultConnection");
 
             IDbConnection conn = new MySqlConnection(connString);
+
+            var departmentRepo = new DapperDepartmentRepository(conn);
+
+            departmentRepo.InsertDepartment("Johnathon's New Department"); //Checking if Insert Works. Accidentally did it 3 times. 
+
+            var  departments = departmentRepo.GetAllDepartments();
+
+            foreach(var department in departments)
+            {
+                Console.WriteLine(department.DepartmentID);
+                Console.WriteLine(department.Name);
+                Console.WriteLine();
+                Console.WriteLine();
+
+            }
         }
     }
 }
